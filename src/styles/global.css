@@ -1,0 +1,393 @@
+:root {
+  font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+  color: #252538;
+  background: #fff8ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #7553c7;
+  outline-offset: 3px;
+}
+
+.app-shell {
+  width: min(100% - 2rem, 960px);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.eyebrow {
+  color: #7553c7;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.35rem;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.hero-copy {
+  margin: 0.6rem 0 0;
+  color: #57566a;
+}
+
+.hero-badge,
+.welcome-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border-radius: 1.25rem;
+  background: #efe7ff;
+  color: #6844bd;
+  font-size: 1.75rem;
+}
+
+.privacy-note,
+.status-message {
+  margin: 0 0 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+}
+
+.privacy-note {
+  background: #fff0c9;
+  color: #543b00;
+}
+
+.error-message {
+  background: #ffe4e4;
+  color: #7a1717;
+}
+
+.success-message {
+  background: #e3f7e9;
+  color: #174e2a;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.25rem;
+}
+
+.draft-list,
+.workspace,
+.chapter-card,
+.welcome-card {
+  border: 1px solid #eee4d5;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.4rem 1.5rem rgb(74 54 28 / 5%);
+}
+
+.draft-list {
+  padding: 1rem;
+}
+
+.create-draft-form,
+.add-chapter-form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.create-draft-form label,
+.add-chapter-form label {
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 2.8rem;
+  border: 1px solid #b9b4c5;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.7rem;
+  color: inherit;
+  background: #fff;
+}
+
+button {
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  background: #6844bd;
+  color: #fff;
+  font-weight: 700;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.draft-list h2 {
+  margin: 1.5rem 0 0.65rem;
+  font-size: 1.1rem;
+}
+
+.draft-items,
+.chapter-list,
+.panel-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.draft-list-item {
+  width: 100%;
+  border: 1px solid #e6e0ef;
+  background: #faf8ff;
+  color: #332453;
+  text-align: left;
+}
+
+.draft-list-item[aria-pressed="true"] {
+  border-color: #6844bd;
+  background: #efe7ff;
+}
+
+.workspace {
+  min-height: 24rem;
+  padding: clamp(1rem, 3vw, 1.6rem);
+}
+
+.workspace-heading {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #eee4d5;
+}
+
+.workspace-heading h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.25rem 0;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.inline-form {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.inline-form input {
+  min-width: 0;
+}
+
+.inline-form button,
+.secondary-button {
+  flex: 0 0 auto;
+  background: #efe7ff;
+  color: #412a77;
+}
+
+.empty-state,
+.panel-empty-state {
+  color: #57566a;
+}
+
+.chapter-list {
+  margin-top: 1rem;
+}
+
+.chapter-card {
+  padding: 1rem;
+}
+
+.chapter-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chapter-number {
+  margin: 0;
+  color: #7553c7;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.chapter-card h3 {
+  margin: 0.15rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.panel-list {
+  margin-top: 0.75rem;
+}
+
+.panel-card {
+  border-left: 4px solid #ffc96b;
+  border-radius: 0.35rem;
+  padding: 0.7rem 0.85rem;
+  background: #fffaf0;
+}
+
+.panel-card h4 {
+  margin: 0 0 0.65rem;
+}
+
+.panel-editor-form {
+  display: grid;
+  gap: 0.45rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 5rem;
+  resize: vertical;
+  border: 1px solid #b9b4c5;
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.7rem;
+  color: inherit;
+  line-height: 1.5;
+}
+
+.panel-editor-actions,
+.dialog-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.panel-editor-actions span {
+  color: #57566a;
+  font-size: 0.9rem;
+}
+
+.delete-button {
+  background: #9c2f35;
+}
+
+.draft-actions,
+.export-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.export-control .status-message {
+  flex-basis: 100%;
+}
+
+dialog {
+  width: min(100% - 2rem, 28rem);
+  border: 0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1rem 3rem rgb(20 15 30 / 25%);
+}
+
+dialog::backdrop {
+  background: rgb(25 20 35 / 48%);
+}
+
+dialog h2 {
+  margin-top: 0;
+}
+
+.dialog-actions {
+  justify-content: flex-end;
+}
+
+.welcome-card {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: 20rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.welcome-card h2 {
+  margin: 1rem 0 0.3rem;
+}
+
+.welcome-card p {
+  max-width: 28rem;
+  margin: 0;
+  color: #57566a;
+}
+
+@media (max-width: 700px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .draft-list {
+    order: 1;
+  }
+
+  .workspace {
+    order: 2;
+  }
+
+  .inline-form {
+    align-items: stretch;
+  }
+
+  .inline-form button {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-badge {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .inline-form {
+    flex-direction: column;
+  }
+}
